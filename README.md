@@ -58,6 +58,22 @@ O sistema é modelado em torno de um conjunto de entidades que se interconectam 
 -   **ESTOQUE:** Controla a quantidade de bolsas por tipo de sangue em cada `UNIDADE`.
 -   **DOACAO / RETIRADA:** Registros que representam a movimentação do estoque, sendo a `DOACAO` o resultado de uma `SESSAO` bem-sucedida.
 
+  ![]()
+<img src="https://github.com/facclab-opositivo/maistriagem-/blob/main/projetos/Captura%20de%20tela%202025-09-25%20202225.png">
+> Figura 1 - BD NEED
+
+![]()
+<img src="https://github.com/facclab-opositivo/maistriagem-/blob/main/projetos/Captura%20de%20tela%202025-09-25%20203901.png">
+> Figura 2 - BO NEED
+
+![]()
+<img src="https://github.com/facclab-opositivo/maistriagem-/blob/main/projetos/Untitled%20diagram%20_%20Mermaid%20Chart-2025-09-25-231821.png">
+> Figura 3 - BO E-triagem
+
+![]()
+<img src="https://github.com/facclab-opositivo/maistriagem-/blob/main/projetos/Untitled%20diagram%20_%20Mermaid%20Chart-2025-09-25-232014.png">
+> Figura 4 - BD E-triagem 
+
 ## Resultados
 
 ### Aceitação
