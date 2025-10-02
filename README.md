@@ -67,12 +67,29 @@ O sistema é modelado em torno de um conjunto de entidades que se interconectam 
 > Figura 2 - BO NEED
 
 ![]()
+<img src="https://github.com/facclab-opositivo/maistriagem-/blob/main/projetos/WhatsApp%20Image%202025-10-02%20at%2020.19.10.jpeg">
+> Figura 3 - Estado NEED
+
+![]()
+<img src="https://github.com/facclab-opositivo/maistriagem-/blob/main/projetos/Captura%20de%20tela%202025-10-02%20203149.png">
+> Figura 4 - Atividade NEED
+
+![]()
 <img src="https://github.com/facclab-opositivo/maistriagem-/blob/main/projetos/Untitled%20diagram%20_%20Mermaid%20Chart-2025-09-25-231821.png">
-> Figura 3 - BO E-triagem
+> Figura 5 - BO E-triagem
 
 ![]()
 <img src="https://github.com/facclab-opositivo/maistriagem-/blob/main/projetos/Untitled%20diagram%20_%20Mermaid%20Chart-2025-09-25-232014.png">
-> Figura 4 - BD E-triagem 
+> Figura 6 - BD E-triagem 
+
+![]()
+<img src="https://github.com/facclab-opositivo/maistriagem-/blob/main/projetos/Captura%20de%20tela%202025-10-02%20201536.png">
+> Figura 7 - Estado E-triagem
+
+![]()
+<img src="https://github.com/facclab-opositivo/maistriagem-/blob/main/projetos/WhatsApp%20Image%202025-10-02%20at%2020.32.23.jpeg">
+> Figura 8 - Atividade E-triagem
+
 
 ## Resultados
 
