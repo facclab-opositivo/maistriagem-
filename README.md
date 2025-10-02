@@ -1,22 +1,45 @@
-# Projeto E-TRIAGEM
+# Projeto Integrado de Doação e Gestão de Banco de Sangue
 
 ## Apresentação
-O projeto E-TRIAGEM visa otimizar o processo de doação de sangue, reduzindo o tempo de espera, o envolvimento desnecessário e os translados. A solução antecipa o questionário obrigatório da entrevista de triagem de primeiro nível, permitindo que o voluntário chegue ao local de doação com uma etapa já concluída.
+
+Este projeto apresenta uma solução completa para o ciclo de doação de sangue, desde a captação e qualificação do doador até a gestão e distribuição inteligente do estoque. O sistema é dividido em dois módulos principais e complementares:
+
+1.  **E-TRIAGEM:** Uma plataforma focada em otimizar a experiência do doador, antecipando o questionário de triagem de primeiro nível para reduzir o tempo de espera e agilizar o processo no local da coleta.
+2.  **NEED:** Um sistema de gestão de estoque (back-office) que visa otimizar a distribuição de bolsas de sangue entre as unidades, equilibrando o fornecimento com base na demanda, tipo sanguíneo e localização.
+
+Juntos, os módulos criam um ecossistema mais eficiente, seguro e ágil para bancos de sangue.
 
 ## Especificação
 
-### Principais Funcionalidades
--   Cadastro e gerenciamento de voluntários (doadores).
--   Realização de questionário de triagem de primeiro nível (N1) de forma digital.
--   Agendamento, cancelamento e remarcação de sessões de doação.
--   Associação de um doador e sua triagem a uma sessão específica.
--   Manutenção de histórico de doações e triagens por usuário.
+### Módulo 1: E-TRIAGEM
 
-### Atores (Usuários)
--   **VOLUNTÁRIO:** Pessoa interessada em doar sangue, que preenche o formulário de triagem e agenda sua doação.
--   **TRIAGEM-N1:** Profissional de saúde ou sistema responsável por validar e processar os questionários de triagem.
+-   **Principais Funcionalidades:**
+    -   Cadastro e gerenciamento de voluntários (doadores).
+    -   Preenchimento digital do questionário de triagem de primeiro nível (N1).
+    -   Agendamento, cancelamento e remarcação de sessões de doação.
+    -   Associação da triagem a uma sessão de doação específica.
+    -   Manutenção de histórico de doações por usuário.
+
+-   **Atores (Usuários):**
+    -   **VOLUNTÁRIO:** Pessoa interessada em doar, que utiliza o sistema para se qualificar e agendar a doação.
+    -   **TRIAGEM-N1:** Profissional ou sistema que valida os questionários.
+
+### Módulo 2: NEED
+
+-   **Principais Funcionalidades:**
+    -   Cadastro e gerenciamento das unidades do banco de sangue.
+    -   Controle de estoque de bolsas por tipo sanguíneo (O, A, B, AB...).
+    -   Registro de entradas (doações) e saídas (retiradas) do estoque.
+    -   Gerenciamento de usuários internos com diferentes permissões.
+    -   Geração de relatórios para análise de distribuição e demanda.
+
+-   **Atores (Usuários):**
+    -   **Admin:** Gerencia o sistema, cadastra unidades e usuários.
+    -   **Atendimento:** Opera o sistema no dia a dia, registrando doações e retiradas.
+    -   **Doador:** Pode interagir com o sistema para consultar agendamentos.
 
 ### Tecnologias Envolvidas
+
 -   **Linguagem:** [Ex: Python, Java, JavaScript]
 -   **Banco de Dados:** [Ex: SQLite, PostgreSQL, MySQL]
 -   **Frameworks:** [Ex: Django, Spring Boot, React]
@@ -25,13 +48,23 @@ O projeto E-TRIAGEM visa otimizar o processo de doação de sangue, reduzindo o 
 ## Projeto
 
 ### Principais Entidades de Negócio
--   **VOLUNTARIO:** Armazena os dados cadastrais do doador (Nome, CPF, Contato, etc.).
--   **SESSAO:** Representa um agendamento de doação, contendo informações como data, hora, status (agendada, cancelada, remarcada) e o voluntário associado.
--   **TRIAGEM:** Contém as respostas do questionário de pré-triagem do voluntário, associada a uma sessão.
--   **USUARIO:** Entidade para controle de acesso e histórico.
--   **HISTORICO:** Registro das atividades e doações passadas do usuário.
+
+O sistema é modelado em torno de um conjunto de entidades que se interconectam entre os módulos:
+
+-   **VOLUNTARIO / USUARIO:** Representa a pessoa física, seja como doador no E-TRIAGEM ou como usuário do sistema NEED. Contém dados cadastrais e histórico.
+-   **SESSAO:** Entidade central que representa um agendamento. Inicia-se no E-TRIAGEM e, após a doação ser concluída, gera um registro de `DOACAO` no módulo NEED.
+-   **TRIAGEM:** Armazena as respostas do questionário de pré-triagem, vinculada a um `VOLUNTARIO` e a uma `SESSAO`.
+-   **UNIDADE:** Representa uma unidade física do banco de sangue, onde as doações ocorrem e o estoque é gerenciado.
+-   **ESTOQUE:** Controla a quantidade de bolsas por tipo de sangue em cada `UNIDADE`.
+-   **DOACAO / RETIRADA:** Registros que representam a movimentação do estoque, sendo a `DOACAO` o resultado de uma `SESSAO` bem-sucedida.
 
 ## Resultados
 
 ### Aceitação
-O projeto busca ser validado através da redução do tempo médio do processo de doação, do aumento da taxa de comparecimento aos agendamentos e da satisfação dos voluntários, medida por meio de pesquisas de feedback. Espera-se que a plataforma simplifique e incentive o ato de doar sangue.
+
+O sucesso do projeto integrado será medido pela combinação dos seguintes fatores:
+
+1.  **Para o Doador (E-TRIAGEM):** Redução do tempo total do processo de doação e aumento da taxa de satisfação e de comparecimento dos voluntários.
+2.  **Para o Banco de Sangue (NEED):** Melhoria na eficiência da gestão de estoque, redução do desperdício de bolsas de sangue e garantia de uma distribuição mais ágil e equilibrada entre as unidades.
+
+O objetivo final é fortalecer a cadeia de doação, tornando-a mais atrativa para o doador e mais eficiente para a instituição.
